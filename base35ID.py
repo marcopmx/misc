@@ -3,6 +3,7 @@ ID_DIC = {1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9"
           26: "Q", 27: "R", 28: "S", 29: "T", 30: "U", 31: "V", 32: "W", 33: "X", 34: "Y", 35: "Z"}
 MAX_BASE = 35
 
+
 def generate_id(num):
     """
     >>> generate_id(10), generate_id(35), generate_id(36), generate_id(70), generate_id(1260)
@@ -25,6 +26,7 @@ def generate_id(num):
     gen_id += ID_DIC[num]
     return gen_id[::-1]
 
+
 def translate_id(id_str):
     """
         >>> translate_id('A'), translate_id('Z'), translate_id('11'), translate_id('1Z'), translate_id('ZZ')
@@ -43,3 +45,29 @@ def translate_id(id_str):
         cur_char = id_str[str_len - i - 1:str_len - i]
         gen_id += (backwards_dic[cur_char] * pow(MAX_BASE, i))
     return gen_id
+
+
+def show_generate_id(num):
+    gen_id = ""
+    print(f"Original decimal: {num}")
+    print("The remainder and corresponding characters are the following: \n")
+    while num > MAX_BASE:
+        print(f"Quotient to be divided: {num}\n")
+        remainder = num % MAX_BASE
+        num = num // MAX_BASE
+        if remainder == 0:
+            remainder = MAX_BASE
+            num -= 1
+        print(f"Remainder after dividing by 35: {remainder}\n")
+        gen_id += ID_DIC[remainder]
+        last_char = ID_DIC[remainder]
+        print(f"Corresponds to: {last_char}\n")
+        code = gen_id[::-1]
+        print(f"Our code is now: {code}\n")
+    first_char = ID_DIC[num]
+    print(f"Our (last number) first char: {first_char} \n")
+    gen_id += ID_DIC[num]
+    full_code = gen_id[::-1]
+    print(f"Our full code is {full_code}")
+    return full_code
+
