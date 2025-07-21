@@ -1,4 +1,2 @@
 # hello-world
-Practicing the GitHub Flow
-
-Practicing branching with the GitHub Flow.
+Learning how to use github and including a few miscellaneous programs
