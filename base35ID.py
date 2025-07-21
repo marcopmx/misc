@@ -8,8 +8,8 @@ def generate_id(num):
     >>> generate_id(10), generate_id(35), generate_id(36), generate_id(70), generate_id(1260)
     ('A', 'Z', '11', '1Z', 'ZZ')
     >>>
-    >>> generate_id(39), generate_id(1000000)
-    ('14', 'NBBF')
+    >>> generate_id(39), generate_id(1000000), generate_id(17856123)
+    ('14', 'NBBF', 'BVGEX')
     >>>
     :param num:
     :return:
@@ -30,8 +30,8 @@ def translate_id(id_str):
         >>> translate_id('A'), translate_id('Z'), translate_id('11'), translate_id('1Z'), translate_id('ZZ')
         (10, 35, 36, 70, 1260)
         >>>
-        >>> translate_id('14'), translate_id('NBBF')
-        (39, 1000000)
+        >>> translate_id('14'), translate_id('NBBF'), translate_id('BVGEX')
+        (39, 1000000, 17856123)
         >>>
         :param id_str:
         :return:
