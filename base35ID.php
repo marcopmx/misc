@@ -56,7 +56,7 @@ function show_generate_ID($num) {
         $code = strrev($id);
         echo "Our code is now: $code";
         echo "<br><hr>";
-        }
+    }
     $first_char = $ID_DIC[$num];
     echo "Our (last number) first char: $first_char <br><hr>";
     $id .= $ID_DIC[$num];
