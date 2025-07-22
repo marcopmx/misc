@@ -39,30 +39,30 @@ function show_generate_ID($num) {
         $id = "";
         echo "Original decimal: $num <br>";
         echo "The remainder and corresponding characters are: <br><br>";
-                while ($num > 35){
-                        echo "Quotient to be divided: $num";
-                        echo "<br>";
-                        $remainder = $num % 35;
-                        $num = intdiv($num, 35);
-                        if ($remainder == 0){
-                                $remainder = 35;
-                                $num -= 1;
-                        }
-                        echo "Remainder after dividing by 35: $remainder";
-                        echo "<br>";
-                        $id .= $ID_DIC[$remainder];
-                        $last_char = $ID_DIC[$remainder];
-                        echo "Corresponds to: $last_char <br>";
-                        $code = strrev($id);
-                        echo "Our code is now: $code";
-                        echo "<br><hr>";
+            while ($num > 35){
+                echo "Quotient to be divided: $num";
+                echo "<br>"; 
+                $remainder = $num % 35;
+                $num = intdiv($num, 35);
+                if ($remainder == 0){
+                    $remainder = 35;
+                    $num -= 1;
                 }
+                echo "Remainder after dividing by 35: $remainder";
+                echo "<br>";
+                $id .= $ID_DIC[$remainder];
+                $last_char = $ID_DIC[$remainder];
+                echo "Corresponds to: $last_char <br>";
+                $code = strrev($id);
+                echo "Our code is now: $code";
+                echo "<br><hr>";
+            }
         $first_char = $ID_DIC[$num];
         echo "Our (last number) first char: $first_char <br><hr>";
         $id .= $ID_DIC[$num];
         $full_code = strrev($id);
         echo "Our full code is $full_code";
-                return (strrev($id));
+        return (strrev($id));
 }
 
 ?>
